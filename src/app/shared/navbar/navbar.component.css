@@ -1,0 +1,32 @@
+.navbar-nav .nav-link {
+  position: relative; /* Position relative for pseudo-element */
+  color: #333; /* Default link color */
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Create an underline pseudo-element */
+.navbar-nav .nav-link::before {
+  content: ""; /* Empty content */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0; /* Initially no height, hidden */
+  background-color: #65727e; /* Underline color */
+  transition: height 0.15s ease-in-out; /* Transition height with ease-in-out */
+}
+
+/* Style for the navbar links on hover */
+.navbar-nav .nav-link:hover::before {
+  height: 4px; /* Increase height to create underline */
+  transition: height 0.15s ease-in-out; /* Transition height with ease-in-out */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #65727e !important;
+  cursor: pointer !important;
+  /*    text-decoration: underline;
+  text-decoration-thickness: 4px; 
+  text-underline-offset: 8px; */
+}

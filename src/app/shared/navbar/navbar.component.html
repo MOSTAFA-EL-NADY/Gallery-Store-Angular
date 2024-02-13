@@ -1,0 +1,47 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light fixed navbar-background"
+>
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target=".navbar-collapse"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarExample01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active mr-3">
+          <!-- Added mr-3 for spacing -->
+          <a class="navbar-brand nav-link" aria-current="page" routerLink="/home"
+            ><i class="fa fa-fw fa-home"></i> Home</a
+          >
+        </li>
+      
+      </ul>
+      <ul class="navbar-nav ml-auto mr-3">
+        <!-- Added mr-3 for spacing -->
+        <!-- Use ml-auto to push "LOGIN" to the right -->
+        <!-- @if(httpAcc.HttpContext.Session.GetString(SD.SessionToken) != null && -->
+        <!-- httpAcc.HttpContext.Session.GetString(SD.SessionToken).ToString().Length -->
+        <!-- > 0) { -->
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLoggedIn" (click)="logout()"
+            ><i class="fa fa-fw fa-sign-out"></i> LOGOUT</a
+          >
+        </li>
+        <!-- } else { -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login" *ngIf="!isLoggedIn"
+            ><i class="fa fa-fw fa-user"></i> LOGIN</a
+          >
+        </li>
+        <!-- } -->
+      </ul>
+    </div>
+  </div>
+</nav>

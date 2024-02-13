@@ -1,0 +1,69 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .example-card {
+    width: 100%;
+    height: 400px; /* Set your desired fixed height */
+    margin: 10px;
+    box-sizing: border-box;
+  }
+  
+  .mat-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .mat-card-title {
+    font-size: 1.5rem;
+  }
+  
+  .mat-card-content {
+    font-size: 1rem;
+  }
+  
+  .mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .example-card {
+    width: 100%;
+    height: 400px; /* Set your desired fixed height */
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd; /* Add a border with a light color */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow rounded corners */
+  }
+  
+  .mat-card-header,
+  .mat-card-content,
+  .mat-card-actions {
+    padding: 10px; /* Add some padding to the header, content, and actions */
+  }
+  
+  .mat-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px; /* Add some bottom margin to the title */
+  }
+  
+  .mat-card-content {
+    font-size: 1rem;
+    flex: 1; /* Allow the content to grow and fill the available space */
+  }
+  
+  .mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .example-card img {
+    width: 100%;
+    height: 200px; /* Set your desired fixed height for the images */
+    object-fit: cover; /* This will make sure the image covers the entire box, preserving its aspect ratio */
+    border-bottom: 1px solid #ddd; /* Add a border at the bottom for separation */
+  }

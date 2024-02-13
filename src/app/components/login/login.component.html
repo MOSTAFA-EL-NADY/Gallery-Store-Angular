@@ -1,0 +1,44 @@
+<div class="container" id="backgroundContainer">
+  <div class="row justify-content-center">
+    <div class="col-md-4 col-10">
+      <form class="form" method="post">
+        <div class="container p-4 mt-1">
+          <p class="form-title">Sign in to your account</p>
+          <div class="row text-center">
+            <div>
+              <app-spinner *ngIf="isLoading"></app-spinner>
+              <ul
+                class="text-danger"
+                style="list-style-type: none; padding-left: 0"
+              >
+                <li *ngIf="hasError">{{ errorMessage }}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="input-container">
+            <input
+              name="username"
+              type="text"
+              class="form-control me-5"
+              placeholder="Username..."
+              [(ngModel)]="loginData.UserName"
+            />
+          </div>
+          <div class="input-container">
+            <input
+              name="password"
+              type="password"
+              id="inputPassword"
+              class="form-control"
+              placeholder="Password..."
+              [(ngModel)]="loginData.Password"
+            />
+          </div>
+          <button class="submit col-12 mt-4" type="submit" (click)="onLogin()">
+            Sign in
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

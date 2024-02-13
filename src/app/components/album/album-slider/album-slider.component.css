@@ -1,0 +1,13 @@
+#carouselExampleCaptions {
+    width: 100%;
+    height: fit-content;
+    overflow: visible;
+    /* Ensure images don't overflow the container */
+}
+
+.carousel-inner img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    
+}

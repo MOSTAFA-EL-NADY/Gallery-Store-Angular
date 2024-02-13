@@ -1,0 +1,37 @@
+<button type="button" class="btn btn-success mt-4 mb-4 ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Create Album</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="albumForm" (ngSubmit)="onSubmit()">
+
+          <div class="mb-3">
+            <label for="title" class="col-form-label">Title:</label>
+            <input type="text" class="form-control" id="title" formControlName="title">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="col-form-label">Description:</label>
+            <input type="text" class="form-control" id="description" formControlName="description">
+          </div>
+          <div class="mb-3">
+            <label for="mainImage" class="col-form-label">Album Image:</label>
+          
+            <input type="file" class="form-control" id="albumImage" formControlName="mainImage" accept=".jpg, .jpeg, .png, .gif"
+              (change)="onFileChange($event)"
+              >
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" [disabled]="albumForm.invalid">Create Album</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

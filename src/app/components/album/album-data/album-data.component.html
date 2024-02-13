@@ -1,0 +1,31 @@
+<div class="container text-center">
+  <div class="card flex flex-column md:flex-row gap-3">
+    <div class="p-inputgroup">
+      <button type="button" pButton label="Search" (click)="searchAlbums()"></button>
+      <input type="text" pInputText [(ngModel)]="searchKeyword" placeholder="Album" />
+    </div>
+
+    <div class="row row-cols-4">
+      <div class="col " *ngFor="let album of userAlbums" id="albumCard">
+        <mat-card class="example-card col border border-3 border-dark-subtle">
+          <mat-card-header>
+            <mat-card-title class="fs-3 text-center">{{ album.title }}</mat-card-title>
+
+          </mat-card-header>
+          <a [routerLink]="['/album', album.id]">
+            <img mat-card-image
+              [src]="isImageAvailable(album) ? serverUrl + album.mainImage : 'assets/images/alterGallery.jpg'"
+              alt="Album Image">
+
+          </a>
+          <mat-card-content>
+            <p>{{ album.description }}</p>
+          </mat-card-content>
+          <mat-card-actions class="mt-2">
+            <button class="btn btn-warning me-3">Edit</button>
+            <button class="btn btn-danger" (click)="deleteAlbum(album.id)">Delete</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>

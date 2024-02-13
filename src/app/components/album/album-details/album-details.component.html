@@ -1,0 +1,53 @@
+<div>
+
+  <div class="row" id="albumImage">
+    <img [src]="serverUrl + album.mainImage" class="img-fluid" alt="...">
+
+  </div>
+</div>
+<div>
+  <!-- <div class="container">
+        <div class="album-details">
+          <h2 class="title">{{ album.title }}</h2>
+         
+          <div class="details">
+            <p class="description">{{ album.description }}</p>
+            <div class="dates">
+              <p><strong>Created On:</strong> {{ album.CreatedOn | date: 'medium' }}</p>
+              <p><strong>Updated On:</strong> {{ album.updatedOn | date: 'medium' }}</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+  <div class="container">
+    <a [routerLink]="['/newImage', albumId]">
+      <button class=" btn btn-success mb-3 mt-3">
+        AddImage
+      </button>
+
+    </a>
+  <br/>
+  <div class="mb-3">
+    <input [(ngModel)]="filterName" placeholder="Filter by name" />
+    <input [(ngModel)]="filterSize" placeholder="Filter by size" />
+    <input [(ngModel)]="filterType" placeholder="Filter by type" />
+    <button (click)="applyFilter()">Apply Filter</button>
+    <button class="btn btn-primary" (click)="resetFilter()">Reset</button>
+  </div>
+    
+
+    <div class="card">
+      <p-galleria [(value)]="filteredImages" [responsiveOptions]="responsiveOptions"
+        [containerStyle]="{ 'max-width': '780px' }" [numVisible]="5">
+        <ng-template pTemplate="item" let-item >
+          <img [src]="serverUrl+item.url" style="width: 100%;" />
+        </ng-template>
+        <ng-template pTemplate="thumbnail" let-item>
+          <div class="grid grid-nogutter justify-content-center">
+            <img [src]="serverUrl+item.url" style="width: 40%; height:40%" />
+          </div>
+        </ng-template>
+      </p-galleria>
+    </div>
+
+  </div>
